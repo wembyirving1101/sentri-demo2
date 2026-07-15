@@ -97,8 +97,8 @@ export default function ContactModal({ contacts, onClose }: ContactModalProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-40 backdrop-blur-sm">
-      <div className={cn('bg-[#1a1e21] border-2 border-[#2d3139] rounded-lg w-11/12 max-w-4xl h-3/4 flex flex-col overflow-hidden', borderVariants({ variant: 'emphasis' }))}>
+    <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-40 backdrop-blur-sm" style={{ transform: 'scale(1)' }}>
+      <div className={cn('bg-[#1a1e21] border-2 border-[#2d3139] rounded-lg w-[800px] h-[600px] flex flex-col overflow-hidden', borderVariants({ variant: 'emphasis' }))}>
         {/* Layer 2: Header */}
         <div className={cn('bg-[#1a1e21] border-b border-[#2d3139] px-6 py-4 flex items-center justify-between', borderVariants({ variant: 'divider' }))}>
           <h1 className="text-xl font-bold text-muted-foreground tracking-wider uppercase">

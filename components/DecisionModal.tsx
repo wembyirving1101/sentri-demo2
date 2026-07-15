@@ -15,8 +15,8 @@ export default function DecisionModal({
 }: DecisionModalProps) {
   const playClickSound = useClickSound()
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-      <div className="bg-card border-2 border-accent rounded-lg shadow-2xl w-full max-w-md max-h-96 flex flex-col overflow-hidden">
+    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" style={{ transform: 'scale(1)' }}>
+      <div className="bg-card border-2 border-accent rounded-lg shadow-2xl w-96 h-96 flex flex-col overflow-hidden">
         {/* Header */}
         <div className="border-b border-accent px-6 py-4 flex items-center justify-between bg-secondary">
           <h2 className="text-lg font-bold text-foreground uppercase tracking-wide">

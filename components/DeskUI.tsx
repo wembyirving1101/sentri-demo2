@@ -22,8 +22,8 @@ export default function DeskUI({ progressPercentage, onEndDay, tasksCompleted = 
 
   return (
     <>
-      {/* Persistent Desk UI */}
-      <div className="fixed bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#171b1d] to-[#1f1f1f] border-t border-[#444444] px-6 py-4 flex items-end justify-between gap-6">
+      {/* Persistent Desk UI - Fixed to bottom of 1920x1080 viewport */}
+      <div className="absolute bottom-0 left-0 w-[1920px] h-52 bg-gradient-to-t from-[#171b1d] to-[#1f1f1f] border-t border-[#444444] px-6 py-4 flex items-end justify-between gap-6">
         {/* Left: Employee Handbook */}
         <div className="flex gap-4">
           {/* Handbook */}
@@ -150,8 +150,8 @@ export default function DeskUI({ progressPercentage, onEndDay, tasksCompleted = 
 
       {/* Modals (placeholders for now) */}
       {showHandbookModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm">
-          <div className={cn('bg-card rounded-lg p-6 w-96 max-h-96 overflow-y-auto', borderVariants({ variant: 'emphasis' }))}>
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm" style={{ transform: 'scale(1)' }}>
+          <div className={cn('bg-card rounded-lg p-6 w-96 h-96 overflow-y-auto', borderVariants({ variant: 'emphasis' }))}>
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-bold">Employee Handbook</h2>
               <button
@@ -183,8 +183,8 @@ export default function DeskUI({ progressPercentage, onEndDay, tasksCompleted = 
       )}
 
       {showMessagesModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm">
-          <div className={cn('bg-card rounded-lg p-6 w-96 max-h-96 overflow-y-auto', borderVariants({ variant: 'emphasis' }))}>
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm" style={{ transform: 'scale(1)' }}>
+          <div className={cn('bg-card rounded-lg p-6 w-96 h-96 overflow-y-auto', borderVariants({ variant: 'emphasis' }))}>
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-bold">Messages</h2>
               <button
@@ -216,8 +216,8 @@ export default function DeskUI({ progressPercentage, onEndDay, tasksCompleted = 
       )}
 
       {showNotesModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm">
-          <div className={cn('bg-card rounded-lg p-6 w-96 max-h-96 overflow-y-auto', borderVariants({ variant: 'emphasis' }))}>
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm" style={{ transform: 'scale(1)' }}>
+          <div className={cn('bg-card rounded-lg p-6 w-96 h-96 overflow-y-auto', borderVariants({ variant: 'emphasis' }))}>
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-bold">Notes</h2>
               <button

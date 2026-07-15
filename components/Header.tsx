@@ -7,7 +7,7 @@ interface HeaderProps {
 
 export default function Header({ currentTime, graduationProgress }: HeaderProps) {
   return (
-    <header className="border-b border-border bg-card px-8 py-6">
+    <header className="w-[1920px] h-20 border-b border-border bg-card px-8 py-4 flex-shrink-0">
       <div className="flex items-center justify-between">
         {/* Left: Logo and Time */}
         <div className="flex items-center gap-8">

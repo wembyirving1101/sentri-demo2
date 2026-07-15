@@ -450,14 +450,14 @@ export default function Home() {
   }
 
   return (
-    <div className="h-screen bg-background text-foreground flex flex-col overflow-hidden">
+    <div className="w-[1920px] h-[1080px] bg-background text-foreground flex flex-col overflow-hidden">
       {/* Header */}
       <Header currentTime={displayTime} graduationProgress={gameState.graduationProgress} />
 
-      {/* Main Content - 3 Column Layout */}
-      <div className="flex-1 flex gap-2 p-4 pb-44 overflow-hidden">
-        {/* Left Sidebar - Fixed */}
-        <div className="w-72 flex flex-col gap-2 flex-shrink-0 overflow-y-auto">
+      {/* Main Content - 3 Column Layout: 320px | flexible | 320px with 16px gaps */}
+      <div className="flex-1 flex gap-4 p-4 pb-52 overflow-hidden">
+        {/* Left Sidebar - Fixed 320px width */}
+        <div className="w-80 flex flex-col gap-2 flex-shrink-0 overflow-y-auto">
           <CompanyCard 
             companyName="KAKFUNG INDUSTRIES"
             department="OPERATIONS"
@@ -532,7 +532,7 @@ export default function Home() {
           ) : null}
         </div>
 
-        {/* Right Sidebar - Fixed and Static */}
+        {/* Right Sidebar - Fixed 320px width */}
         <div className="w-80 overflow-y-auto flex-shrink-0">
           {showDispatchQueue ? (
             <TaskDetailsPanel selectedQueueItem={gameState.dispatchQueue.find(q => q.id === selectedQueueItemId) || null} />

@@ -20,8 +20,8 @@ export default function FeedbackModal({
   const correctAnswer = email.isLegitimate ? 'legitimate' : 'phishing'
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-      <div className={`bg-card border-2 rounded-lg shadow-2xl w-full max-w-md flex flex-col overflow-hidden ${
+    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" style={{ transform: 'scale(1)' }}>
+      <div className={`bg-card border-2 rounded-lg shadow-2xl w-96 h-auto max-h-96 flex flex-col overflow-hidden ${
         isCorrect ? 'border-green-500' : 'border-destructive'
       }`}>
         {/* Header */}
