@@ -15,13 +15,13 @@ interface TaskDetailsPanelProps {
 export default function TaskDetailsPanel({ selectedQueueItem }: TaskDetailsPanelProps) {
   if (!selectedQueueItem) {
     return (
-      <div className={cn('bg-[#171b1d] rounded h-full flex flex-col', borderVariants({ variant: 'emphasis' }))}>
+      <div className={cn('bg-[#171b1d] rounded h-full flex flex-col min-h-0', borderVariants({ variant: 'emphasis' }))}>
         {/* Layer 2: Header */}
         <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b')}>
           <h2 className="text-lg font-bold tracking-widest text-foreground">TASK DETAILS</h2>
         </div>
         {/* Layer 3: Panel */}
-        <div className={cn('flex-1 flex items-center justify-center m-1 rounded bg-[#d3cdc1]')}>
+        <div className={cn('flex-1 flex items-center justify-center m-1 rounded bg-[#d3cdc1] min-h-0')}>
           <div className="text-center text-[#5a5a5a]">
             <p className="text-sm">Select a task from the queue to view details</p>
           </div>
@@ -177,16 +177,16 @@ export default function TaskDetailsPanel({ selectedQueueItem }: TaskDetailsPanel
   }
 
   return (
-    <div className={cn('bg-[#171b1d] rounded h-full flex flex-col', borderVariants({ variant: 'emphasis' }))}>
+    <div className={cn('bg-[#171b1d] rounded h-full flex flex-col min-h-0', borderVariants({ variant: 'emphasis' }))}>
       {/* Layer 2: Header */}
-      <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b')}>
+      <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b flex-shrink-0')}>
         <h2 className="text-lg font-bold tracking-widest text-foreground">TASK DETAILS</h2>
       </div>
 
       {/* Layer 3: Panel */}
-      <div className={cn('flex-1 flex flex-col m-1 rounded bg-[#d3cdc1] p-6')}>
+      <div className={cn('flex-1 flex flex-col m-1 rounded bg-[#d3cdc1] p-6 min-h-0 overflow-y-auto')}>
         {/* Task Type Header */}
-        <div className={cn('flex items-center gap-3 mb-4 pb-4', borderVariants({ variant: 'divider' }), 'border-b border-[#a89a8a]')}>
+        <div className={cn('flex items-center gap-3 mb-4 pb-4', borderVariants({ variant: 'divider' }), 'border-b border-[#a89a8a] flex-shrink-0')}>
           <div className={cn('w-10 h-10 bg-[#c1b5a8] rounded flex items-center justify-center flex-shrink-0 border border-[#a89a8a]')}>
             {getTaskTypeIcon()}
           </div>
@@ -198,14 +198,14 @@ export default function TaskDetailsPanel({ selectedQueueItem }: TaskDetailsPanel
         </div>
 
         {/* Details */}
-        <div className="flex-1">
+        <div>
           {selectedQueueItem.type === 'email' && getEmailDetails()}
           {selectedQueueItem.type === 'password' && getPasswordDetails()}
           {selectedQueueItem.type === 'data-classification' && getDataClassificationDetails()}
         </div>
 
         {/* Action Button */}
-        <div className={cn('pt-4 mt-4', borderVariants({ variant: 'divider' }), 'border-t border-[#a89a8a]')}>
+        <div className={cn('pt-4 mt-4 flex-shrink-0', borderVariants({ variant: 'divider' }), 'border-t border-[#a89a8a]')}>
           <button className="w-full bg-[#7a7a7a] hover:bg-[#6a6a6a] text-white py-2 rounded font-medium text-sm transition-colors uppercase tracking-wider">
             Review Task
           </button>

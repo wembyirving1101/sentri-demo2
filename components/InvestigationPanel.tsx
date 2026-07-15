@@ -36,9 +36,9 @@ export default function InvestigationPanel({
       </div>
 
       {/* Level 3 Content Area - Beige with margin */}
-      <div className="flex-1 flex flex-col bg-[#d3cdc1] m-1 rounded">
-        {/* Investigation items container - no gaps */}
-        <div className="flex-1">
+      <div className="flex-1 flex flex-col bg-[#d3cdc1] m-1 rounded min-h-0">
+        {/* Investigation items container - scrollable if needed */}
+        <div className="flex-1 overflow-y-auto">
           {investigationList.length === 0 ? (
             <div className="flex items-center justify-center h-full">
               <p className="text-[#666666] text-center">No email tasks available</p>

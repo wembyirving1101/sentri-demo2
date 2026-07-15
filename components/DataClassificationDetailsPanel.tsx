@@ -18,9 +18,9 @@ export default function DataClassificationDetailsPanel({
 
   if (!document) {
     return (
-      <div className={cn('flex flex-col h-full bg-[#171b1d]', borderVariants({ variant: 'emphasis' }))}>
+      <div className={cn('flex flex-col h-full bg-[#171b1d] min-h-0', borderVariants({ variant: 'emphasis' }))}>
         {/* Layer 2: Header */}
-        <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b')}>
+        <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b flex-shrink-0')}>
           <div className="flex items-center gap-2">
             <FileText size={20} className="text-[#d3cdc1]" />
             <h2 className="text-lg font-bold tracking-widest text-foreground">CLASSIFICATION</h2>
@@ -28,7 +28,7 @@ export default function DataClassificationDetailsPanel({
         </div>
 
         {/* Empty State */}
-        <div className={cn('flex-1 flex items-center justify-center m-1 rounded bg-[#d3cdc1]')}>
+        <div className={cn('flex-1 flex items-center justify-center m-1 rounded bg-[#d3cdc1] min-h-0')}>
           <p className="text-[#666666] text-center">No data classification tasks available</p>
         </div>
       </div>
@@ -75,9 +75,9 @@ export default function DataClassificationDetailsPanel({
   ]
 
   return (
-    <div className={cn('flex flex-col h-full bg-[#171b1d]', borderVariants({ variant: 'emphasis' }))}>
+    <div className={cn('flex flex-col h-full bg-[#171b1d] min-h-0', borderVariants({ variant: 'emphasis' }))}>
       {/* Layer 2: Header */}
-      <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b')}>
+      <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b flex-shrink-0')}>
         <div className="flex items-center gap-2">
           <FileText size={20} className="text-[#d3cdc1]" />
           <h2 className="text-lg font-bold tracking-widest text-foreground">CLASSIFICATION</h2>
@@ -85,7 +85,7 @@ export default function DataClassificationDetailsPanel({
       </div>
 
       {/* Layer 3: Panel */}
-      <div className={cn('flex-1 flex flex-col gap-4 m-1 rounded bg-[#d3cdc1] p-6')}>
+      <div className={cn('flex-1 flex flex-col gap-4 m-1 rounded bg-[#d3cdc1] p-6 min-h-0 overflow-y-auto')}>
         {/* Task Details */}
         <Panel className="p-4 bg-[#d3cdc1] text-[#000000]">
           <div className="flex items-center gap-2 mb-4">
