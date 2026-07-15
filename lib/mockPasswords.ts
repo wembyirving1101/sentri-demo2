@@ -269,6 +269,6 @@ export const mockPasswords: Password[] = [
       { id: 'company', label: 'Company Name', description: 'Does not contain company name', icon: '🏢', present: false, checked: false, weight: 20 },
       { id: 'leaked', label: 'Known Leaked Passwords', description: 'Found in common passwords list', icon: '⚠️', present: true, checked: false, weight: 50 },
     ],
-    correctDecision: 'rejection',
+    correctDecision: 'reject',
   },
 ]
