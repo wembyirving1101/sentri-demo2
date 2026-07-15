@@ -22,8 +22,8 @@ export default function DeskUI({ progressPercentage, onEndDay, tasksCompleted = 
 
   return (
     <>
-      {/* Persistent Desk UI - Fixed to bottom of 1920x1080 viewport */}
-      <div className="absolute bottom-0 left-0 w-[1920px] h-52 bg-gradient-to-t from-[#171b1d] to-[#1f1f1f] border-t border-[#444444] px-6 py-4 flex items-end justify-between gap-6">
+      {/* Persistent Desk UI - Fixed height bottom row */}
+      <div className="w-[1920px] h-52 bg-gradient-to-t from-[#171b1d] to-[#1f1f1f] border-t border-[#444444] px-6 py-4 flex items-end justify-between gap-6 flex-shrink-0">
         {/* Left: Employee Handbook */}
         <div className="flex gap-4">
           {/* Handbook */}

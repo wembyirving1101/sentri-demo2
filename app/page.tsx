@@ -450,12 +450,12 @@ export default function Home() {
   }
 
   return (
-    <div className="w-[1920px] h-[1080px] bg-background text-foreground flex flex-col overflow-hidden">
-      {/* Header */}
+    <div className="w-[1920px] h-[1080px] bg-background text-foreground flex flex-col">
+      {/* Header - Fixed height */}
       <Header currentTime={displayTime} graduationProgress={gameState.graduationProgress} />
 
       {/* Main Content - 3 Column Layout: 320px | flexible | 320px with 16px gaps */}
-      <div className="flex-1 flex gap-4 p-4 pb-52">
+      <div className="flex-1 flex gap-4 p-4 min-h-0">
         {/* Left Sidebar - Fixed 320px width */}
         <div className="w-80 flex flex-col gap-2 flex-shrink-0">
           <CompanyCard 
@@ -533,7 +533,7 @@ export default function Home() {
         </div>
 
         {/* Right Sidebar - Fixed 320px width */}
-        <div className="w-80 overflow-y-auto flex-shrink-0">
+        <div className="w-80 flex-shrink-0">
           {showDispatchQueue ? (
             <TaskDetailsPanel selectedQueueItem={gameState.dispatchQueue.find(q => q.id === selectedQueueItemId) || null} />
           ) : gameState.currentTaskType === 'email' ? (
