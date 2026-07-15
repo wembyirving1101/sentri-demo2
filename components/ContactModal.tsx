@@ -98,7 +98,7 @@ export default function ContactModal({ contacts, onClose }: ContactModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-40 backdrop-blur-sm" style={{ transform: 'scale(1)' }}>
-      <div className={cn('bg-[#1a1e21] border-2 border-[#2d3139] rounded-lg w-[800px] h-[600px] flex flex-col overflow-hidden', borderVariants({ variant: 'emphasis' }))}>
+      <div className={cn('bg-[#1a1e21] border-2 border-[#2d3139] rounded-lg w-[800px] h-[600px] flex flex-col', borderVariants({ variant: 'emphasis' }))}>
         {/* Layer 2: Header */}
         <div className={cn('bg-[#1a1e21] border-b border-[#2d3139] px-6 py-4 flex items-center justify-between', borderVariants({ variant: 'divider' }))}>
           <h1 className="text-xl font-bold text-muted-foreground tracking-wider uppercase">
@@ -116,10 +116,10 @@ export default function ContactModal({ contacts, onClose }: ContactModalProps) {
         </div>
 
         {/* Layer 3: Panel */}
-        <div className={cn('flex flex-1 overflow-hidden m-1 rounded bg-[#0f1215]')}>
+        <div className={cn('flex flex-1 m-1 rounded bg-[#0f1215]')}>
           {/* Left Panel - Trusted Contacts */}
-          <div className="w-1/3 border-r border-r-[#2d3139] bg-[#1a1e21] overflow-y-auto">
-            <div className="p-4 border-b border-b-[#2d3139] sticky top-0 bg-[#1a1e21] z-10">
+          <div className="w-1/3 border-r border-r-[#2d3139] bg-[#1a1e21]">
+            <div className="p-4 border-b border-b-[#2d3139] bg-[#1a1e21] z-10">
               <h2 className="text-xs font-bold text-[#8b96a6] tracking-widest uppercase">
                 Trusted Contacts
               </h2>
@@ -153,7 +153,7 @@ export default function ContactModal({ contacts, onClose }: ContactModalProps) {
           </div>
 
           {/* Right Panel - Chat Interface */}
-          <div className="w-2/3 bg-[#0f1215] flex flex-col overflow-hidden">
+          <div className="w-2/3 bg-[#0f1215] flex flex-col">
             {selectedContact ? (
               <>
                 {/* Contact Header */}
@@ -164,7 +164,7 @@ export default function ContactModal({ contacts, onClose }: ContactModalProps) {
                 </div>
 
                 {/* Messages Area */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                <div className="flex-1 p-4 space-y-4">
                   {messages.length === 0 ? (
                     <div className="flex items-center justify-center h-full">
                       <p className="text-sm text-[#8b96a6] text-center">

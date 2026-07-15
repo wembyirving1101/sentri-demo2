@@ -21,7 +21,7 @@ export default function FeedbackModal({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" style={{ transform: 'scale(1)' }}>
-      <div className={`bg-card border-2 rounded-lg shadow-2xl w-96 h-auto max-h-96 flex flex-col overflow-hidden ${
+      <div className={`bg-card border-2 rounded-lg shadow-2xl w-96 flex flex-col ${
         isCorrect ? 'border-green-500' : 'border-destructive'
       }`}>
         {/* Header */}

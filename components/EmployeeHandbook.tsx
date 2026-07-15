@@ -6,7 +6,7 @@ interface EmployeeHandbookProps {
 
 export default function EmployeeHandbook({ onClose }: EmployeeHandbookProps) {
   return (
-    <div className="absolute bottom-4 left-4 w-64 bg-yellow-100 border-2 border-yellow-600 rounded-lg shadow-lg overflow-hidden">
+    <div className="absolute bottom-4 left-4 w-64 bg-yellow-100 border-2 border-yellow-600 rounded-lg shadow-lg">
       {/* Header - looks like a notebook spine */}
       <div className="bg-yellow-700 text-white px-4 py-3 flex items-center gap-2 justify-between">
         <div className="flex items-center gap-2">
@@ -22,7 +22,7 @@ export default function EmployeeHandbook({ onClose }: EmployeeHandbookProps) {
       </div>
 
       {/* Content area - like notebook binding */}
-      <div className="bg-yellow-50 px-4 py-4 border-l-4 border-yellow-600 space-y-3 max-h-56 overflow-y-auto">
+      <div className="bg-yellow-50 px-4 py-4 border-l-4 border-yellow-600 space-y-3">
         <div>
           <h4 className="font-bold text-sm text-yellow-900 mb-1">Security Policy</h4>
           <p className="text-xs text-yellow-800 leading-tight">

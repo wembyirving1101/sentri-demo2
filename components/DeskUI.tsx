@@ -52,7 +52,7 @@ export default function DeskUI({ progressPercentage, onEndDay, tasksCompleted = 
           </button>
 
           {/* Company Password Policy Card */}
-          <div className="w-56 h-28 bg-[#171b1d] border border-[#444444] rounded-sm p-3 shadow-lg flex flex-col justify-between overflow-hidden">
+          <div className="w-56 h-28 bg-[#171b1d] border border-[#444444] rounded-sm p-3 shadow-lg flex flex-col justify-between">
             <div>
               <div className="text-[10px] font-bold text-primary uppercase tracking-wider mb-2 ui-font">
                 Company Password Policy
@@ -151,7 +151,7 @@ export default function DeskUI({ progressPercentage, onEndDay, tasksCompleted = 
       {/* Modals (placeholders for now) */}
       {showHandbookModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm" style={{ transform: 'scale(1)' }}>
-          <div className={cn('bg-card rounded-lg p-6 w-96 h-96 overflow-y-auto', borderVariants({ variant: 'emphasis' }))}>
+          <div className={cn('bg-card rounded-lg p-6 w-96 h-96', borderVariants({ variant: 'emphasis' }))}>
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-bold">Employee Handbook</h2>
               <button
@@ -184,7 +184,7 @@ export default function DeskUI({ progressPercentage, onEndDay, tasksCompleted = 
 
       {showMessagesModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm" style={{ transform: 'scale(1)' }}>
-          <div className={cn('bg-card rounded-lg p-6 w-96 h-96 overflow-y-auto', borderVariants({ variant: 'emphasis' }))}>
+          <div className={cn('bg-card rounded-lg p-6 w-96 h-96', borderVariants({ variant: 'emphasis' }))}>
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-bold">Messages</h2>
               <button
@@ -217,7 +217,7 @@ export default function DeskUI({ progressPercentage, onEndDay, tasksCompleted = 
 
       {showNotesModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm" style={{ transform: 'scale(1)' }}>
-          <div className={cn('bg-card rounded-lg p-6 w-96 h-96 overflow-y-auto', borderVariants({ variant: 'emphasis' }))}>
+          <div className={cn('bg-card rounded-lg p-6 w-96 h-96', borderVariants({ variant: 'emphasis' }))}>
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-bold">Notes</h2>
               <button

@@ -455,9 +455,9 @@ export default function Home() {
       <Header currentTime={displayTime} graduationProgress={gameState.graduationProgress} />
 
       {/* Main Content - 3 Column Layout: 320px | flexible | 320px with 16px gaps */}
-      <div className="flex-1 flex gap-4 p-4 pb-52 overflow-hidden">
+      <div className="flex-1 flex gap-4 p-4 pb-52">
         {/* Left Sidebar - Fixed 320px width */}
-        <div className="w-80 flex flex-col gap-2 flex-shrink-0 overflow-y-auto">
+        <div className="w-80 flex flex-col gap-2 flex-shrink-0">
           <CompanyCard 
             companyName="KAKFUNG INDUSTRIES"
             department="OPERATIONS"

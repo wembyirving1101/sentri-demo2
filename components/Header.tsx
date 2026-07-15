@@ -23,7 +23,7 @@ export default function Header({ currentTime, graduationProgress }: HeaderProps)
         <div className="flex-1 mx-8">
           <div className="flex items-center gap-3">
             <div className="flex-1">
-              <div className="bg-secondary rounded h-8 overflow-hidden border border-border">
+              <div className="bg-secondary rounded h-8 border border-border">
                 <div
                   className="bg-success h-full transition-all duration-300"
                   style={{ width: `${graduationProgress}%` }}

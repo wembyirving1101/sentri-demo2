@@ -18,7 +18,7 @@ export default function DataClassificationDetailsPanel({
 
   if (!document) {
     return (
-      <div className={cn('flex flex-col h-full overflow-hidden bg-[#171b1d]', borderVariants({ variant: 'emphasis' }))}>
+      <div className={cn('flex flex-col h-full bg-[#171b1d]', borderVariants({ variant: 'emphasis' }))}>
         {/* Layer 2: Header */}
         <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b')}>
           <div className="flex items-center gap-2">
@@ -75,7 +75,7 @@ export default function DataClassificationDetailsPanel({
   ]
 
   return (
-    <div className={cn('flex flex-col h-full overflow-hidden bg-[#171b1d]', borderVariants({ variant: 'emphasis' }))}>
+    <div className={cn('flex flex-col h-full bg-[#171b1d]', borderVariants({ variant: 'emphasis' }))}>
       {/* Layer 2: Header */}
       <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b')}>
         <div className="flex items-center gap-2">
@@ -85,7 +85,7 @@ export default function DataClassificationDetailsPanel({
       </div>
 
       {/* Layer 3: Panel */}
-      <div className={cn('flex-1 flex flex-col gap-4 overflow-y-auto m-1 rounded bg-[#d3cdc1] p-6')}>
+      <div className={cn('flex-1 flex flex-col gap-4 m-1 rounded bg-[#d3cdc1] p-6')}>
         {/* Task Details */}
         <Panel className="p-4 bg-[#d3cdc1] text-[#000000]">
           <div className="flex items-center gap-2 mb-4">
@@ -115,7 +115,7 @@ export default function DataClassificationDetailsPanel({
         </Panel>
 
         {/* Classification Options */}
-        <div className="flex flex-col gap-3 flex-1 overflow-y-auto">
+        <div className="flex flex-col gap-3 flex-1">
           {classifications.map((classification) => (
             <button
               key={classification.id}

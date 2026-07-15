@@ -21,9 +21,9 @@ export default function InvestigationPanel({
   const checkedCount = investigationList.filter((item) => item.checked).length
 
   return (
-    <div className={cn('w-80 h-full bg-[#171b1d] rounded flex flex-col overflow-hidden', borderVariants({ variant: 'emphasis' }))}>
+    <div className={cn('w-80 h-full bg-[#171b1d] rounded flex flex-col', borderVariants({ variant: 'emphasis' }))}>
       {/* Level 2 Header - Dark and Sticky */}
-      <div className={cn('sticky top-0 bg-[#171b1d] px-4 py-5 flex items-center justify-between z-10', borderVariants({ variant: 'divider' }), 'border-b')}>
+      <div className={cn('bg-[#171b1d] px-4 py-5 flex items-center justify-between', borderVariants({ variant: 'divider' }), 'border-b')}>
         <div className="flex items-center gap-3">
           <AlertTriangle size={20} className="text-destructive flex-shrink-0" />
           <h2 className="text-sm font-bold tracking-widest text-muted-foreground uppercase">
@@ -36,9 +36,9 @@ export default function InvestigationPanel({
       </div>
 
       {/* Level 3 Content Area - Beige with margin */}
-      <div className="flex-1 flex flex-col overflow-hidden bg-[#d3cdc1] m-1 rounded">
+      <div className="flex-1 flex flex-col bg-[#d3cdc1] m-1 rounded">
         {/* Investigation items container - no gaps */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1">
           {investigationList.length === 0 ? (
             <div className="flex items-center justify-center h-full">
               <p className="text-[#666666] text-center">No email tasks available</p>

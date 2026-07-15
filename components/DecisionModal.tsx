@@ -16,7 +16,7 @@ export default function DecisionModal({
   const playClickSound = useClickSound()
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" style={{ transform: 'scale(1)' }}>
-      <div className="bg-card border-2 border-accent rounded-lg shadow-2xl w-96 h-96 flex flex-col overflow-hidden">
+      <div className="bg-card border-2 border-accent rounded-lg shadow-2xl w-96 h-96 flex flex-col">
         {/* Header */}
         <div className="border-b border-accent px-6 py-4 flex items-center justify-between bg-secondary">
           <h2 className="text-lg font-bold text-foreground uppercase tracking-wide">
@@ -34,7 +34,7 @@ export default function DecisionModal({
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+        <div className="flex-1 px-6 py-4 space-y-4">
           <div>
             <label className="text-xs font-bold text-muted-foreground uppercase block mb-1">
               From

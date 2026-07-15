@@ -117,7 +117,7 @@ export default function DispatchQueueView({ queue, selectedQueueId, onSelectQueu
       </div>
 
       {/* Layer 3: Panel */}
-      <div className={cn('flex-1 flex flex-col overflow-hidden m-1 rounded bg-[#d3cdc1]')}>
+      <div className={cn('flex-1 flex flex-col m-1 rounded bg-[#d3cdc1]')}>
         {/* Tabs - Full Width Filter Bar */}
         <div className="flex gap-0">
           {tabs.map((tab, idx) => (
@@ -139,7 +139,7 @@ export default function DispatchQueueView({ queue, selectedQueueId, onSelectQueu
         </div>
 
         {/* Queue Table */}
-        <div className="flex-1 overflow-y-auto px-6 pt-4 pb-6">
+        <div className="flex-1 px-6 pt-4 pb-6">
           {getFilteredQueue().length === 0 ? (
             <div className="text-center text-[#5a5a5a] text-sm py-8">
               No tasks in queue
@@ -147,7 +147,7 @@ export default function DispatchQueueView({ queue, selectedQueueId, onSelectQueu
           ) : (
             <div className="space-y-0">
               {/* Table Header */}
-              <div className="grid grid-cols-12 gap-2 px-3 py-2 bg-[#c1b5a8] rounded-t sticky top-0 text-sm font-bold text-[#5a5a5a] uppercase tracking-wider border-b-2 border-[#a89a8a]">
+              <div className="grid grid-cols-12 gap-2 px-3 py-2 bg-[#c1b5a8] rounded-t text-sm font-bold text-[#5a5a5a] uppercase tracking-wider border-b-2 border-[#a89a8a]">
                 <div className="col-span-2">TYPE</div>
                 <div className="col-span-4">TASK</div>
                 <div className="col-span-2">FROM</div>

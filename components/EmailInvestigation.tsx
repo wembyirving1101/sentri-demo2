@@ -23,9 +23,9 @@ export default function EmailInvestigation({
   investigatedCategories,
 }: EmailInvestigationProps) {
   return (
-    <div className="flex-1 h-full bg-[#171b1d] border border-[#3a3f42] rounded flex flex-col overflow-hidden">
+    <div className="flex-1 h-full bg-[#171b1d] border border-[#3a3f42] rounded flex flex-col">
       {/* Level 2 Header - Dark and Sticky */}
-      <div className="sticky top-0 bg-[#171b1d] border-b border-[#3a3f42] px-4 py-5 z-10 flex items-center gap-3">
+      <div className="bg-[#171b1d] border-b border-[#3a3f42] px-4 py-5 z-10 flex items-center gap-3">
         <Mail size={24} className="text-muted-foreground flex-shrink-0" />
         <h2 className="text-sm font-bold tracking-widest text-muted-foreground uppercase">
           EMAIL INVESTIGATION
@@ -33,13 +33,13 @@ export default function EmailInvestigation({
       </div>
 
       {/* Level 3 Content Area - Beige with padding to show Level 1 border */}
-      <div className="flex-1 flex overflow-hidden bg-[#d3cdc1] m-1 rounded">
+      <div className="flex-1 flex bg-[#d3cdc1] m-1 rounded">
         {/* Inbox Section */}
-        <div className="w-80 flex flex-col overflow-hidden bg-[#d3cdc1] border-r border-[#c5b8a8] p-2 gap-2">
+        <div className="w-80 flex flex-col bg-[#d3cdc1] border-r border-[#c5b8a8] p-2 gap-2">
           <div className="bg-[#d3cdc1] rounded border border-[#c5b8a8] px-2 py-1 text-xs font-medium text-[#000000]">
             <span className="uppercase">Inbox ({emails.length})</span>
           </div>
-          <div className="flex-1 overflow-y-auto space-y-2">
+          <div className="flex-1 space-y-2">
             {emails.length === 0 ? (
               <div className="flex items-center justify-center h-full">
                 <p className="text-[#666666] text-sm text-center">No email tasks available</p>

@@ -41,7 +41,7 @@ export default function DataClassificationFeedbackModal({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" style={{ transform: 'scale(1)' }}>
-      <div className={`w-96 h-auto max-h-96 rounded border-2 overflow-hidden bg-card ${
+      <div className={`w-96 rounded border-2 bg-card ${
         isCorrect ? 'border-green-600' : 'border-red-600'
       }`}>
         {/* Header */}

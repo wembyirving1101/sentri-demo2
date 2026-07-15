@@ -15,7 +15,7 @@ export default function EmailInbox({
 }: EmailInboxProps) {
   const playClickSound = useClickSound()
   return (
-    <div className="flex flex-col overflow-hidden w-80 bg-background">
+    <div className="flex flex-col w-80 bg-background">
       {/* Inbox Header */}
       <div className="border-b border-border bg-card px-4 py-3 flex items-center justify-between">
         <h2 className="text-xs font-bold tracking-widest text-muted-foreground uppercase">
@@ -24,7 +24,7 @@ export default function EmailInbox({
       </div>
 
       {/* Email List */}
-      <div className="flex-1 overflow-y-auto divide-y divide-border">
+      <div className="flex-1 divide-y divide-border">
         {emails.map((email) => {
           const isSelected = selectedEmailId === email.id
 

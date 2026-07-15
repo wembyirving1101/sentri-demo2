@@ -15,7 +15,7 @@ interface TaskDetailsPanelProps {
 export default function TaskDetailsPanel({ selectedQueueItem }: TaskDetailsPanelProps) {
   if (!selectedQueueItem) {
     return (
-      <div className={cn('bg-[#171b1d] rounded h-full flex flex-col overflow-hidden', borderVariants({ variant: 'emphasis' }))}>
+      <div className={cn('bg-[#171b1d] rounded h-full flex flex-col', borderVariants({ variant: 'emphasis' }))}>
         {/* Layer 2: Header */}
         <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b')}>
           <h2 className="text-lg font-bold tracking-widest text-foreground">TASK DETAILS</h2>
@@ -177,14 +177,14 @@ export default function TaskDetailsPanel({ selectedQueueItem }: TaskDetailsPanel
   }
 
   return (
-    <div className={cn('bg-[#171b1d] rounded h-full flex flex-col overflow-hidden', borderVariants({ variant: 'emphasis' }))}>
+    <div className={cn('bg-[#171b1d] rounded h-full flex flex-col', borderVariants({ variant: 'emphasis' }))}>
       {/* Layer 2: Header */}
       <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b')}>
         <h2 className="text-lg font-bold tracking-widest text-foreground">TASK DETAILS</h2>
       </div>
 
       {/* Layer 3: Panel */}
-      <div className={cn('flex-1 flex flex-col m-1 rounded bg-[#d3cdc1] p-6 overflow-hidden')}>
+      <div className={cn('flex-1 flex flex-col m-1 rounded bg-[#d3cdc1] p-6')}>
         {/* Task Type Header */}
         <div className={cn('flex items-center gap-3 mb-4 pb-4', borderVariants({ variant: 'divider' }), 'border-b border-[#a89a8a]')}>
           <div className={cn('w-10 h-10 bg-[#c1b5a8] rounded flex items-center justify-center flex-shrink-0 border border-[#a89a8a]')}>
@@ -198,7 +198,7 @@ export default function TaskDetailsPanel({ selectedQueueItem }: TaskDetailsPanel
         </div>
 
         {/* Details */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1">
           {selectedQueueItem.type === 'email' && getEmailDetails()}
           {selectedQueueItem.type === 'password' && getPasswordDetails()}
           {selectedQueueItem.type === 'data-classification' && getDataClassificationDetails()}

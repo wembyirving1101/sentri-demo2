@@ -14,7 +14,7 @@ export default function DataClassificationTask({
 }: DataClassificationTaskProps) {
   if (!document) {
     return (
-      <div className={cn('flex-1 flex flex-col h-full overflow-hidden bg-[#171b1d]', borderVariants({ variant: 'emphasis' }))}>
+      <div className={cn('flex-1 flex flex-col h-full bg-[#171b1d]', borderVariants({ variant: 'emphasis' }))}>
         {/* Layer 2: Header */}
         <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b')}>
           <h2 className="text-lg font-bold tracking-widest text-foreground">TASK: DATA CLASSIFICATION</h2>
@@ -29,16 +29,16 @@ export default function DataClassificationTask({
   }
 
   return (
-    <div className={cn('flex-1 flex flex-col h-full overflow-hidden bg-[#171b1d]', borderVariants({ variant: 'emphasis' }))}>
+    <div className={cn('flex-1 flex flex-col h-full bg-[#171b1d]', borderVariants({ variant: 'emphasis' }))}>
       {/* Layer 2: Header */}
       <div className={cn('px-6 py-4 bg-[#171b1d]', borderVariants({ variant: 'divider' }), 'border-b')}>
         <h2 className="text-lg font-bold tracking-widest text-foreground">TASK: DATA CLASSIFICATION</h2>
       </div>
 
       {/* Layer 3: Panel */}
-      <div className={cn('flex-1 flex gap-6 overflow-hidden m-1 rounded bg-[#d3cdc1]')}>
+      <div className={cn('flex-1 flex gap-6 m-1 rounded bg-[#d3cdc1]')}>
         {/* Main Content - Document Preview */}
-        <div className="flex-1 flex flex-col gap-6 overflow-hidden p-6">
+        <div className="flex-1 flex flex-col gap-6 p-6">
           {/* Document Info */}
           <div className="bg-[#d3cdc1] rounded p-4">
             <div className="flex items-center gap-3 mb-4">
@@ -51,9 +51,9 @@ export default function DataClassificationTask({
           </div>
 
           {/* Document Preview */}
-          <div className="bg-[#d3cdc1] rounded p-4 flex-1 flex flex-col overflow-hidden">
+          <div className="bg-[#d3cdc1] rounded p-4 flex-1 flex flex-col">
             <span className="text-[#5a5a5a] uppercase text-xs font-bold block mb-3">DOCUMENT PREVIEW</span>
-            <div className="flex-1 flex flex-col gap-3 overflow-y-auto">
+            <div className="flex-1 flex flex-col gap-3">
               <div className="bg-[#c1b5a8] rounded p-3 flex items-center gap-3">
                 <FileText size={32} className="text-[#000000] flex-shrink-0" />
                 <div>
@@ -61,7 +61,7 @@ export default function DataClassificationTask({
                   <p className="text-[#5a5a5a] text-xs">{document.fileSize}</p>
                 </div>
               </div>
-              <div className="bg-[#c1b5a8] rounded p-4 flex-1 overflow-y-auto">
+              <div className="bg-[#c1b5a8] rounded p-4 flex-1">
                 <p className="text-[#000000] text-sm whitespace-pre-wrap">{document.preview}</p>
               </div>
             </div>

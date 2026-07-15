@@ -16,9 +16,9 @@ export default function PasswordStrengthTask({
 }: PasswordStrengthTaskProps) {
   if (!password) {
     return (
-      <div className="flex-1 h-full bg-[#171b1d] border border-[#3a3f42] rounded flex flex-col overflow-hidden">
+      <div className="flex-1 h-full bg-[#171b1d] border border-[#3a3f42] rounded flex flex-col">
         {/* Header */}
-        <div className="sticky top-0 bg-[#171b1d] border-b border-[#3a3f42] px-4 py-5 z-10 flex items-center gap-3">
+        <div className="bg-[#171b1d] border-b border-[#3a3f42] px-4 py-5 z-10 flex items-center gap-3">
           <h2 className="text-sm font-bold tracking-widest text-muted-foreground uppercase">
             PASSWORD STRENGTH ASSESSMENT
           </h2>
@@ -33,18 +33,18 @@ export default function PasswordStrengthTask({
   }
 
   return (
-    <div className="flex-1 h-full bg-[#171b1d] border border-[#3a3f42] rounded flex flex-col overflow-hidden">
+    <div className="flex-1 h-full bg-[#171b1d] border border-[#3a3f42] rounded flex flex-col">
       {/* Header */}
-      <div className="sticky top-0 bg-[#171b1d] border-b border-[#3a3f42] px-4 py-5 z-10 flex items-center gap-3">
+      <div className="bg-[#171b1d] border-b border-[#3a3f42] px-4 py-5 z-10 flex items-center gap-3">
         <h2 className="text-sm font-bold tracking-widest text-muted-foreground uppercase">
           PASSWORD STRENGTH ASSESSMENT
         </h2>
       </div>
 
       {/* Layer 1/2 Content Area - Beige with margin showing dark border */}
-      <div className="flex-1 flex overflow-hidden bg-[#d3cdc1] m-1 rounded">
+      <div className="flex-1 flex bg-[#d3cdc1] m-1 rounded">
         {/* Left Column - Password Assessment */}
-        <div className="flex-1 flex flex-col gap-2 overflow-y-auto p-3">
+        <div className="flex-1 flex flex-col gap-2 p-3">
           {/* Employee Info Card */}
           <div className="bg-[#d3cdc1] rounded border border-[#c5b8a8] p-2">
             <div className="flex gap-4">
@@ -77,7 +77,7 @@ export default function PasswordStrengthTask({
           </div>
 
           {/* Password Characteristics Card */}
-          <div className="bg-[#d3cdc1] rounded border border-[#c5b8a8] p-2 flex-1 overflow-y-auto">
+          <div className="bg-[#d3cdc1] rounded border border-[#c5b8a8] p-2 flex-1">
             <span className="text-[#666666] uppercase text-xs font-bold block mb-2">PASSWORD CHARACTERISTICS</span>
             <div className="space-y-2">
               {password.characteristics.map((char) => (

@@ -12,7 +12,7 @@ export default function Panel({ children, className = '', border = 'emphasis' }:
   return (
     <div
       className={cn(
-        'bg-panel text-panel-foreground rounded flex flex-col overflow-hidden',
+        'bg-panel text-panel-foreground rounded flex flex-col',
         borderVariants({ variant: border }),
         className
       )}

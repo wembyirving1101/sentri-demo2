@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import ScaleManager from '@/components/ScaleManager'
 import './globals.css'
 
 
@@ -28,15 +29,18 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className="antialiased bg-background text-foreground">
-        <div className="game-viewport">
-          <div className="game-content">
+        <div className="game-container">
+          <div className="game-screen">
             {children}
           </div>
         </div>
+        <ScaleManager />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
 }
+
+

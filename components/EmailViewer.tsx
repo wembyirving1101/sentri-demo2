@@ -57,7 +57,7 @@ export default function EmailViewer({
   const avatarColor = getAvatarColor(email.from)
 
   return (
-    <div className={cn('flex-1 flex flex-col overflow-hidden', isEmbedded ? 'bg-[#d3cdc1] text-[#000000]' : cn('bg-card rounded', borderVariants({ variant: 'emphasis' })))}>
+    <div className={cn('flex-1 flex flex-col', isEmbedded ? 'bg-[#d3cdc1] text-[#000000]' : cn('bg-card rounded', borderVariants({ variant: 'emphasis' })))}>
       {/* Header - Only show when not embedded */}
       {!isEmbedded && (
         <>
@@ -99,7 +99,7 @@ export default function EmailViewer({
       )}
 
       {/* Email Content - No Cards Design */}
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1">
         <div className={isEmbedded ? 'bg-[#d3cdc1]' : 'bg-background'}>
           {/* Subject Title */}
           <div className={`border-b px-6 py-4 ${isEmbedded ? 'border-[#c5b8a8] bg-[#d3cdc1]' : 'border-border bg-card'}`}>

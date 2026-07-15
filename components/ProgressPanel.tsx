@@ -23,7 +23,7 @@ export default function ProgressPanel({ tasksCompleted = 2, tasksTotal = 4 }: Pr
               <span className="text-xs text-muted-foreground">TODAY&apos;S TASKS</span>
               <span className="font-mono text-sm font-bold text-accent">{tasksCompleted}/{tasksTotal}</span>
             </div>
-            <div className={cn('bg-secondary rounded h-4 overflow-hidden', borderVariants({ variant: 'divider' }))}>
+            <div className={cn('bg-secondary rounded h-4', borderVariants({ variant: 'divider' }))}>
               <div 
                 className="bg-success h-full transition-all duration-300" 
                 style={{ width: `${progressPercentage}%` }} 
