@@ -465,7 +465,7 @@ export default function Home() {
   return (
     <div 
       className="w-[1920px] bg-background text-foreground flex flex-col" 
-      style={{ height: aspectRatio === '16:9' ? '1080px' : '1200px' }}
+      style={{ height: '1408px' }}
     >
       {/* Header - Fixed height */}
       <Header 
