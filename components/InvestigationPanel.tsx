@@ -21,7 +21,7 @@ export default function InvestigationPanel({
   const checkedCount = investigationList.filter((item) => item.checked).length
 
   return (
-    <div className={cn('w-96 h-full bg-[#171b1d] rounded flex flex-col', borderVariants({ variant: 'emphasis' }))}>
+    <div className={cn('w-[430px] h-full bg-[#171b1d] rounded flex flex-col', borderVariants({ variant: 'emphasis' }))}>
       {/* Level 2 Header - Dark and Sticky */}
       <div className={cn('bg-[#171b1d] px-4 py-5 flex items-center justify-between', borderVariants({ variant: 'divider' }), 'border-b')}>
         <div className="flex items-center gap-3">

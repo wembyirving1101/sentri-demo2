@@ -532,8 +532,8 @@ export default function Home() {
           ) : null}
         </div>
 
-        {/* Right Sidebar - Fixed 384px width */}
-        <div className="w-96 flex-shrink-0 min-h-0">
+        {/* Right Sidebar - Fixed 430px width */}
+        <div className="w-[430px] flex-shrink-0 min-h-0">
           {showDispatchQueue ? (
             <TaskDetailsPanel selectedQueueItem={gameState.dispatchQueue.find(q => q.id === selectedQueueItemId) || null} />
           ) : gameState.currentTaskType === 'email' ? (
