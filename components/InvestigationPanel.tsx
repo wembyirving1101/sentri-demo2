@@ -64,10 +64,10 @@ export default function InvestigationPanel({
                     {iconMap[item.id as keyof typeof iconMap]}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-base font-bold text-[#000000] mb-1">{item.label}</p>
-                    <p className="text-sm text-[#5a5a5a] mb-2">{item.description}</p>
+                    <p className="text-lg font-bold text-[#000000] mb-1">{item.label}</p>
+                    <p className="text-base text-[#5a5a5a] mb-2">{item.description}</p>
                     {item.hasEvidence && (
-                      <p className="text-sm font-semibold text-[#7a9d6d]">✓ Evidence collected</p>
+                      <p className="text-base font-semibold text-[#7a9d6d]">✓ Evidence collected</p>
                     )}
                   </div>
                 </div>
@@ -100,7 +100,7 @@ export default function InvestigationPanel({
                 playClickSound()
                 onVerify()
               }}
-              className="w-full py-2 px-3 rounded font-bold text-xs uppercase tracking-wide transition-colors bg-[#c1b5a8] text-[#000000] hover:bg-[#b5a89a]"
+              className="w-full py-3 px-3 rounded font-bold text-sm uppercase tracking-wide transition-colors bg-[#c1b5a8] text-[#000000] hover:bg-[#b5a89a]"
             >
               Contact People
             </button>
@@ -109,10 +109,10 @@ export default function InvestigationPanel({
 
         {/* Evidence Collected Section */}
         <div className={cn(borderVariants({ variant: 'divider' }), 'border-t px-3 py-3')}>
-          <p className="text-xs font-bold text-[#000000] uppercase mb-2">
+          <p className="text-sm font-bold text-[#000000] uppercase mb-2">
             Evidence Collected
           </p>
-          <p className="text-xs text-[#000000] mb-3">
+          <p className="text-base text-[#000000] mb-3">
             Review the clues you&apos;ve found to build your case.
           </p>
         </div>
@@ -124,7 +124,7 @@ export default function InvestigationPanel({
               playClickSound()
               onMakeDecision()
             }}
-            className="w-full py-3 rounded font-bold text-sm uppercase tracking-wide transition-colors bg-[#282c2f] text-white hover:bg-[#323539]"
+            className="w-full py-3 rounded font-bold text-base uppercase tracking-wide transition-colors bg-[#282c2f] text-white hover:bg-[#323539]"
           >
             Make a Decision
           </button>

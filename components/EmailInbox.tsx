@@ -18,7 +18,7 @@ export default function EmailInbox({
     <div className="flex flex-col w-80 bg-background">
       {/* Inbox Header */}
       <div className="border-b border-border bg-card px-4 py-3 flex items-center justify-between">
-        <h2 className="text-xs font-bold tracking-widest text-muted-foreground uppercase">
+        <h2 className="text-sm font-bold tracking-widest text-muted-foreground uppercase">
           INBOX ({emails.length})
         </h2>
       </div>
@@ -42,10 +42,10 @@ export default function EmailInbox({
               <div className="flex items-start justify-between gap-2">
                 {/* Email Info */}
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-foreground truncate">
+                  <p className="text-base font-medium text-foreground truncate">
                     {email.from}
                   </p>
-                  <p className="text-xs text-muted-foreground truncate">
+                  <p className="text-sm text-muted-foreground truncate">
                     {email.subject}
                   </p>
                 </div>

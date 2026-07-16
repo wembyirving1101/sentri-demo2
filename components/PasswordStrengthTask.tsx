@@ -19,14 +19,14 @@ export default function PasswordStrengthTask({
       <div className="flex-1 h-full bg-[#171b1d] border border-[#3a3f42] rounded flex flex-col">
         {/* Header */}
         <div className="bg-[#171b1d] border-b border-[#3a3f42] px-4 py-5 z-10 flex items-center gap-3">
-          <h2 className="text-sm font-bold tracking-widest text-muted-foreground uppercase">
+          <h2 className="text-base font-bold tracking-widest text-muted-foreground uppercase">
             PASSWORD STRENGTH ASSESSMENT
           </h2>
         </div>
 
         {/* Empty State */}
         <div className="flex-1 flex items-center justify-center bg-[#d3cdc1] m-1 rounded">
-          <p className="text-[#666666] text-center">No password tasks available</p>
+          <p className="text-[#666666] text-center text-base">No password tasks available</p>
         </div>
       </div>
     )
@@ -36,7 +36,7 @@ export default function PasswordStrengthTask({
     <div className="flex-1 h-full bg-[#171b1d] border border-[#3a3f42] rounded flex flex-col">
       {/* Header */}
       <div className="bg-[#171b1d] border-b border-[#3a3f42] px-4 py-5 z-10 flex items-center gap-3">
-        <h2 className="text-sm font-bold tracking-widest text-muted-foreground uppercase">
+        <h2 className="text-base font-bold tracking-widest text-muted-foreground uppercase">
           PASSWORD STRENGTH ASSESSMENT
         </h2>
       </div>
@@ -50,13 +50,13 @@ export default function PasswordStrengthTask({
             <div className="flex gap-4">
               <div className="w-12 h-12 bg-[#c5b8a8] rounded-full flex items-center justify-center text-lg flex-shrink-0">👤</div>
               <div className="flex-1">
-                <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="grid grid-cols-2 gap-3 text-base">
                   <div>
-                    <span className="text-[#666666] uppercase text-xs font-bold">EMPLOYEE</span>
+                    <span className="text-[#666666] uppercase text-sm font-bold">EMPLOYEE</span>
                     <p className="text-[#000000] font-bold mt-1">{password.employee}</p>
                   </div>
                   <div>
-                    <span className="text-[#666666] uppercase text-xs font-bold">DEPARTMENT</span>
+                    <span className="text-[#666666] uppercase text-sm font-bold">DEPARTMENT</span>
                     <p className="text-[#000000] font-bold mt-1">{password.department}</p>
                   </div>
                   <div className="col-span-2">

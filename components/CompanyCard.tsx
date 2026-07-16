@@ -11,7 +11,7 @@ interface CompanyCardProps {
 export default function CompanyCard({ companyName, department, role }: CompanyCardProps) {
   return (
     <div className={cn('bg-card rounded p-4', borderVariants({ variant: 'emphasis' }))}>
-      <div className="text-xs font-bold tracking-widest text-muted-foreground uppercase mb-3">
+      <div className="text-sm font-bold tracking-widest text-muted-foreground uppercase mb-3">
         COMPANY
       </div>
       
@@ -21,13 +21,13 @@ export default function CompanyCard({ companyName, department, role }: CompanyCa
         </div>
         
         <div className="flex-1">
-          <div className="text-sm font-bold text-foreground uppercase tracking-wide leading-tight">
+          <div className="text-base font-bold text-foreground uppercase tracking-wide leading-tight">
             {companyName}
           </div>
-          <div className="text-xs text-muted-foreground mt-1">
+          <div className="text-sm text-muted-foreground mt-1">
             {role.toUpperCase()}
           </div>
-          <div className={cn('text-xs text-muted-foreground mt-2 pt-2', borderVariants({ variant: 'divider' }), 'border-t')}>
+          <div className={cn('text-sm text-muted-foreground mt-2 pt-2', borderVariants({ variant: 'divider' }), 'border-t')}>
             {department}
           </div>
         </div>

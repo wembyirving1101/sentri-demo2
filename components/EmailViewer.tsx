@@ -103,7 +103,7 @@ export default function EmailViewer({
         <div className={isEmbedded ? 'bg-[#d3cdc1]' : 'bg-background'}>
           {/* Subject Title */}
           <div className={`border-b px-6 py-4 ${isEmbedded ? 'border-[#c5b8a8] bg-[#d3cdc1]' : 'border-border bg-card'}`}>
-            <h1 className={`text-xl font-bold ${isEmbedded ? 'text-[#000000]' : 'text-foreground'}`}>{email.subject}</h1>
+            <h1 className={`text-2xl font-bold ${isEmbedded ? 'text-[#000000]' : 'text-foreground'}`}>{email.subject}</h1>
           </div>
 
           {/* Sender Profile Section */}
@@ -111,7 +111,7 @@ export default function EmailViewer({
             <div className="flex items-start gap-4">
               {/* Avatar */}
               <div
-                className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+                className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-base flex-shrink-0"
                 style={{ backgroundColor: avatarColor }}
               >
                 {senderInitials}
@@ -119,20 +119,20 @@ export default function EmailViewer({
 
               {/* Sender Info */}
               <div className="flex-1 min-w-0">
-                <p className={`font-bold text-sm ${isEmbedded ? 'text-[#000000]' : 'text-foreground'}`}>{email.from}</p>
-                <p className={`text-xs ${isEmbedded ? 'text-[#000000] opacity-70' : 'text-muted-foreground'}`}>{email.senderDomain}</p>
-                <p className={`text-xs ${isEmbedded ? 'text-[#000000] opacity-70' : 'text-muted-foreground'}`}>to: {email.to}</p>
+                <p className={`font-bold text-base ${isEmbedded ? 'text-[#000000]' : 'text-foreground'}`}>{email.from}</p>
+                <p className={`text-sm ${isEmbedded ? 'text-[#000000] opacity-70' : 'text-muted-foreground'}`}>{email.senderDomain}</p>
+                <p className={`text-sm ${isEmbedded ? 'text-[#000000] opacity-70' : 'text-muted-foreground'}`}>to: {email.to}</p>
               </div>
             </div>
 
             {/* Timestamp */}
-            <span className={`text-xs font-mono flex-shrink-0 ml-4 ${isEmbedded ? 'text-[#000000] opacity-70' : 'text-muted-foreground'}`}>
+            <span className={`text-sm font-mono flex-shrink-0 ml-4 ${isEmbedded ? 'text-[#000000] opacity-70' : 'text-muted-foreground'}`}>
               {email.timestamp}
             </span>
           </div>
 
           {/* Email Body Content */}
-          <div className={`px-6 py-6 text-sm leading-relaxed whitespace-pre-wrap ${isEmbedded ? 'text-[#000000]' : 'text-foreground'}`}>
+          <div className={`px-6 py-6 text-base leading-relaxed whitespace-pre-wrap ${isEmbedded ? 'text-[#000000]' : 'text-foreground'}`}>
             {email.body}
           </div>
 
@@ -151,8 +151,8 @@ export default function EmailViewer({
                   >
                     <FileText size={20} className={isEmbedded ? 'text-[#000000] opacity-70 flex-shrink-0' : 'text-muted-foreground flex-shrink-0'} />
                     <div className="flex-1 min-w-0">
-                      <p className={`text-sm font-medium ${isEmbedded ? 'text-[#000000]' : 'text-foreground'}`}>{attachment.name}</p>
-                      <p className={`text-xs ${isEmbedded ? 'text-[#000000] opacity-70' : 'text-muted-foreground'}`}>{attachment.size} KB</p>
+                      <p className={`text-base font-medium ${isEmbedded ? 'text-[#000000]' : 'text-foreground'}`}>{attachment.name}</p>
+                      <p className={`text-sm ${isEmbedded ? 'text-[#000000] opacity-70' : 'text-muted-foreground'}`}>{attachment.size} KB</p>
                     </div>
                   </div>
                 ))}
