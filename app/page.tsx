@@ -40,6 +40,17 @@ export default function Home() {
   const { isMuted, toggleMute } = useBackgroundMusic()
   const [currentTime, setCurrentTime] = useState<string>('')
   const [showSettings, setShowSettings] = useState(false)
+  const [aspectRatio, setAspectRatio] = useState<'16:9' | '16:10'>('16:9')
+  
+  const handleSaveSettings = (settings: { aspectRatio: '16:9' | '16:10' }) => {
+    setAspectRatio(settings.aspectRatio)
+    // Update the game screen height based on aspect ratio
+    const gameScreen = document.querySelector('.game-screen') as HTMLElement
+    if (gameScreen) {
+      gameScreen.style.height = settings.aspectRatio === '16:9' ? '1080px' : '1200px'
+    }
+  }
+
   const [gameState, setGameState] = useState<GameState>({
     graduationProgress: 35,
     currentTaskType: 'email',
@@ -452,7 +463,10 @@ export default function Home() {
   }
 
   return (
-    <div className="w-[1920px] h-[1080px] bg-background text-foreground flex flex-col">
+    <div 
+      className="w-[1920px] bg-background text-foreground flex flex-col" 
+      style={{ height: aspectRatio === '16:9' ? '1080px' : '1200px' }}
+    >
       {/* Header - Fixed height */}
       <Header 
         currentTime={displayTime} 
@@ -625,6 +639,8 @@ export default function Home() {
       <SettingsModal
         isOpen={showSettings}
         onClose={() => setShowSettings(false)}
+        onSaveSettings={handleSaveSettings}
+        currentAspectRatio={aspectRatio}
       />
 
       {/* Persistent Desk UI */}

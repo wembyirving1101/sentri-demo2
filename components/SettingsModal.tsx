@@ -8,6 +8,8 @@ import { borderVariants } from '@/lib/borderVariants'
 interface SettingsModalProps {
   isOpen: boolean
   onClose: () => void
+  onSaveSettings?: (settings: { aspectRatio: '16:9' | '16:10'; audioSettings: AudioSettings }) => void
+  currentAspectRatio?: '16:9' | '16:10'
 }
 
 interface AudioSettings {
@@ -19,6 +21,8 @@ interface AudioSettings {
 export default function SettingsModal({
   isOpen,
   onClose,
+  onSaveSettings,
+  currentAspectRatio = '16:9',
 }: SettingsModalProps) {
   const [activeCategory, setActiveCategory] = useState<'audio' | 'display' | 'accessibility' | 'system'>('audio')
   const [audioSettings, setAudioSettings] = useState<AudioSettings>({
@@ -26,7 +30,12 @@ export default function SettingsModal({
     musicVolume: 60,
     soundEffectsVolume: 80,
   })
-  const [aspectRatio, setAspectRatio] = useState<'16:9' | '16:10'>('16:9')
+  const [aspectRatio, setAspectRatio] = useState<'16:9' | '16:10'>(currentAspectRatio)
+
+  const handleSaveChanges = () => {
+    onSaveSettings?.({ aspectRatio, audioSettings })
+    onClose()
+  }
 
   if (!isOpen) return null
 
@@ -38,7 +47,15 @@ export default function SettingsModal({
   ] as const
 
   return (
-    <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 backdrop-blur-sm" style={{ transform: 'scale(1)' }}>
+    <div 
+      className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 backdrop-blur-sm" 
+      style={{ transform: 'scale(1)' }}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          onClose()
+        }
+      }}
+    >
       <div className={cn('w-[1400px] h-[800px] bg-[#171b1d] rounded flex flex-col', borderVariants({ variant: 'emphasis' }))}>
         {/* Header */}
         <div className={cn('px-8 py-6 bg-[#171b1d] flex items-center justify-between', borderVariants({ variant: 'divider' }), 'border-b flex-shrink-0')}>
@@ -264,10 +281,10 @@ export default function SettingsModal({
             </div>
           </div>
           <button
-            onClick={onClose}
-            className={cn('px-6 py-3 rounded font-bold tracking-wider text-foreground transition-colors', borderVariants({ variant: 'divider' }), 'border hover:bg-secondary')}
+            onClick={handleSaveChanges}
+            className={cn('px-6 py-3 rounded font-bold tracking-wider text-black transition-colors bg-success hover:bg-[#5ee75e]', borderVariants({ variant: 'divider' }), 'border')}
           >
-            ← BACK TO CONSOLE
+            ✓ SAVE CHANGES
           </button>
         </div>
       </div>
