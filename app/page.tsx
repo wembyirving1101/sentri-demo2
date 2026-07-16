@@ -471,6 +471,8 @@ export default function Home() {
       <Header 
         currentTime={displayTime} 
         graduationProgress={gameState.graduationProgress}
+        completedTasks={gameState.todaysTasksCompleted}
+        totalTasks={gameState.tasksGeneratedToday || 4}
         onSettingsClick={() => setShowSettings(true)}
       />
 
