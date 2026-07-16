@@ -31,6 +31,7 @@ import PasswordPolicyPanel from '@/components/PasswordPolicyPanel'
 import DataClassificationDetailsPanel from '@/components/DataClassificationDetailsPanel'
 import DeskUI from '@/components/DeskUI'
 import ContactModal from '@/components/ContactModal'
+import SettingsModal from '@/components/SettingsModal'
 
 export default function Home() {
   const playCorrectSound = useCorrectAnswerSound()
@@ -38,6 +39,7 @@ export default function Home() {
   const playTaskNotificationSound = useTaskNotificationSound()
   const { isMuted, toggleMute } = useBackgroundMusic()
   const [currentTime, setCurrentTime] = useState<string>('')
+  const [showSettings, setShowSettings] = useState(false)
   const [gameState, setGameState] = useState<GameState>({
     graduationProgress: 35,
     currentTaskType: 'email',
@@ -452,7 +454,11 @@ export default function Home() {
   return (
     <div className="w-[1920px] h-[1080px] bg-background text-foreground flex flex-col">
       {/* Header - Fixed height */}
-      <Header currentTime={displayTime} graduationProgress={gameState.graduationProgress} />
+      <Header 
+        currentTime={displayTime} 
+        graduationProgress={gameState.graduationProgress}
+        onSettingsClick={() => setShowSettings(true)}
+      />
 
       {/* Main Content - 3 Column Layout: 320px | flexible | 320px with 16px gaps */}
       <div className="flex-1 flex gap-4 p-4 min-h-0">
@@ -614,6 +620,12 @@ export default function Home() {
           onClose={() => setShowContactModal(false)}
         />
       )}
+
+      {/* Settings Modal */}
+      <SettingsModal
+        isOpen={showSettings}
+        onClose={() => setShowSettings(false)}
+      />
 
       {/* Persistent Desk UI */}
       <DeskUI 

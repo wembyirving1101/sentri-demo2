@@ -1,24 +1,32 @@
 'use client'
 
 import { useState } from 'react'
-import { X } from 'lucide-react'
+import { X, Volume2, Music, Zap } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { borderVariants } from '@/lib/borderVariants'
 
 interface SettingsModalProps {
   isOpen: boolean
   onClose: () => void
-  soundEnabled: boolean
-  onSoundToggle: (enabled: boolean) => void
+}
+
+interface AudioSettings {
+  masterVolume: number
+  musicVolume: number
+  soundEffectsVolume: number
 }
 
 export default function SettingsModal({
   isOpen,
   onClose,
-  soundEnabled,
-  onSoundToggle,
 }: SettingsModalProps) {
   const [activeCategory, setActiveCategory] = useState<'audio' | 'display' | 'accessibility' | 'system'>('audio')
+  const [audioSettings, setAudioSettings] = useState<AudioSettings>({
+    masterVolume: 80,
+    musicVolume: 60,
+    soundEffectsVolume: 80,
+  })
+  const [aspectRatio, setAspectRatio] = useState<'16:9' | '16:10'>('16:9')
 
   if (!isOpen) return null
 
@@ -74,30 +82,67 @@ export default function SettingsModal({
               <div className="flex flex-col gap-6">
                 <h2 className="text-xl font-bold tracking-widest text-success uppercase">AUDIO SETTINGS</h2>
                 
-                {/* Master Volume / Sound Toggle */}
-                <div className={cn('p-6 rounded bg-[#2a2f32]', borderVariants({ variant: 'divider' }), 'border')}>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <span className="text-lg">🔊</span>
-                      <label className="text-lg font-bold tracking-wider text-foreground uppercase">
-                        Master Sound
-                      </label>
-                    </div>
-                    <button
-                      onClick={() => onSoundToggle(!soundEnabled)}
-                      className={cn(
-                        'px-6 py-2 rounded font-bold tracking-wider transition-colors',
-                        soundEnabled
-                          ? 'bg-success text-black hover:bg-[#5ee75e]'
-                          : 'bg-destructive text-white hover:bg-[#ef4444]'
-                      )}
-                    >
-                      {soundEnabled ? 'ON' : 'OFF'}
-                    </button>
+                {/* Master Volume */}
+                <div className={cn('p-6 rounded bg-[#0f1213]', borderVariants({ variant: 'divider' }), 'border')}>
+                  <div className="flex items-center gap-4 mb-4">
+                    <Volume2 size={24} className="text-[#c1b5a8] flex-shrink-0" />
+                    <label className="text-lg font-bold tracking-wider text-foreground uppercase">
+                      Master Volume
+                    </label>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-3">
-                    {soundEnabled ? 'Sound effects and music are enabled' : 'All sound is currently disabled'}
-                  </p>
+                  <div className="flex items-center gap-4">
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      value={audioSettings.masterVolume}
+                      onChange={(e) => setAudioSettings(prev => ({ ...prev, masterVolume: parseInt(e.target.value) }))}
+                      className="flex-1 h-3 bg-[#2a2f32] rounded-lg appearance-none cursor-pointer accent-success"
+                    />
+                    <span className="text-success font-bold text-lg min-w-16 text-right">{audioSettings.masterVolume}%</span>
+                  </div>
+                </div>
+
+                {/* Music Volume */}
+                <div className={cn('p-6 rounded bg-[#0f1213]', borderVariants({ variant: 'divider' }), 'border')}>
+                  <div className="flex items-center gap-4 mb-4">
+                    <Music size={24} className="text-[#c1b5a8] flex-shrink-0" />
+                    <label className="text-lg font-bold tracking-wider text-foreground uppercase">
+                      Music Volume
+                    </label>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      value={audioSettings.musicVolume}
+                      onChange={(e) => setAudioSettings(prev => ({ ...prev, musicVolume: parseInt(e.target.value) }))}
+                      className="flex-1 h-3 bg-[#2a2f32] rounded-lg appearance-none cursor-pointer accent-success"
+                    />
+                    <span className="text-success font-bold text-lg min-w-16 text-right">{audioSettings.musicVolume}%</span>
+                  </div>
+                </div>
+
+                {/* Sound Effects Volume */}
+                <div className={cn('p-6 rounded bg-[#0f1213]', borderVariants({ variant: 'divider' }), 'border')}>
+                  <div className="flex items-center gap-4 mb-4">
+                    <Zap size={24} className="text-[#c1b5a8] flex-shrink-0" />
+                    <label className="text-lg font-bold tracking-wider text-foreground uppercase">
+                      Sound Effects Volume
+                    </label>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      value={audioSettings.soundEffectsVolume}
+                      onChange={(e) => setAudioSettings(prev => ({ ...prev, soundEffectsVolume: parseInt(e.target.value) }))}
+                      className="flex-1 h-3 bg-[#2a2f32] rounded-lg appearance-none cursor-pointer accent-success"
+                    />
+                    <span className="text-success font-bold text-lg min-w-16 text-right">{audioSettings.soundEffectsVolume}%</span>
+                  </div>
                 </div>
               </div>
             )}
@@ -107,15 +152,29 @@ export default function SettingsModal({
               <div className="flex flex-col gap-6">
                 <h2 className="text-xl font-bold tracking-widest text-success uppercase">DISPLAY SETTINGS</h2>
                 
-                <div className={cn('p-6 rounded bg-[#2a2f32]', borderVariants({ variant: 'divider' }), 'border')}>
+                <div className={cn('p-6 rounded bg-[#0f1213]', borderVariants({ variant: 'divider' }), 'border')}>
                   <label className="text-lg font-bold tracking-wider text-foreground uppercase block mb-4">
-                    📺 Aspect Ratio
+                    Aspect Ratio
                   </label>
                   <div className="flex gap-4">
-                    <button className={cn('px-6 py-3 rounded font-bold tracking-wider transition-colors bg-success text-black')}>
+                    <button 
+                      onClick={() => setAspectRatio('16:9')}
+                      className={cn('px-6 py-3 rounded font-bold tracking-wider transition-colors', 
+                        aspectRatio === '16:9' 
+                          ? 'bg-success text-black hover:bg-[#5ee75e]'
+                          : cn('bg-[#2a2f32] text-foreground hover:bg-[#323839]', borderVariants({ variant: 'divider' }), 'border')
+                      )}
+                    >
                       16:9 (1920×1080)
                     </button>
-                    <button className={cn('px-6 py-3 rounded font-bold tracking-wider transition-colors bg-[#3a3f42] text-foreground hover:bg-[#424749]', borderVariants({ variant: 'divider' }), 'border')}>
+                    <button 
+                      onClick={() => setAspectRatio('16:10')}
+                      className={cn('px-6 py-3 rounded font-bold tracking-wider transition-colors', 
+                        aspectRatio === '16:10'
+                          ? 'bg-success text-black hover:bg-[#5ee75e]'
+                          : cn('bg-[#2a2f32] text-foreground hover:bg-[#323839]', borderVariants({ variant: 'divider' }), 'border')
+                      )}
+                    >
                       16:10 (1920×1200)
                     </button>
                   </div>
@@ -128,8 +187,42 @@ export default function SettingsModal({
               <div className="flex flex-col gap-6">
                 <h2 className="text-xl font-bold tracking-widest text-success uppercase">ACCESSIBILITY</h2>
                 
-                <div className={cn('p-6 rounded bg-[#2a2f32]', borderVariants({ variant: 'divider' }), 'border')}>
-                  <p className="text-muted-foreground">Accessibility settings coming soon</p>
+                <div className={cn('p-6 rounded bg-[#0f1213]', borderVariants({ variant: 'divider' }), 'border')}>
+                  <label className="text-lg font-bold tracking-wider text-foreground uppercase block mb-4">
+                    Text Size
+                  </label>
+                  <div className="flex gap-2">
+                    {(['Small', 'Normal', 'Large'] as const).map((size) => (
+                      <button
+                        key={size}
+                        className={cn('px-4 py-2 rounded font-bold tracking-wider transition-colors',
+                          size === 'Normal'
+                            ? 'bg-success text-black'
+                            : cn('bg-[#2a2f32] text-foreground hover:bg-[#323839]', borderVariants({ variant: 'divider' }), 'border')
+                        )}
+                      >
+                        {size}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className={cn('p-6 rounded bg-[#0f1213]', borderVariants({ variant: 'divider' }), 'border')}>
+                  <label className="text-lg font-bold tracking-wider text-foreground uppercase block mb-4">
+                    Colorblind Mode
+                  </label>
+                  <button className={cn('px-6 py-2 rounded font-bold tracking-wider transition-colors', cn('bg-[#2a2f32] text-foreground hover:bg-[#323839]', borderVariants({ variant: 'divider' }), 'border'))}>
+                    Off
+                  </button>
+                </div>
+
+                <div className={cn('p-6 rounded bg-[#0f1213]', borderVariants({ variant: 'divider' }), 'border')}>
+                  <label className="text-lg font-bold tracking-wider text-foreground uppercase block mb-4">
+                    Reduce Motion
+                  </label>
+                  <button className={cn('px-6 py-2 rounded font-bold tracking-wider transition-colors', cn('bg-[#2a2f32] text-foreground hover:bg-[#323839]', borderVariants({ variant: 'divider' }), 'border'))}>
+                    Off
+                  </button>
                 </div>
               </div>
             )}
@@ -139,8 +232,22 @@ export default function SettingsModal({
               <div className="flex flex-col gap-6">
                 <h2 className="text-xl font-bold tracking-widest text-success uppercase">SYSTEM</h2>
                 
-                <div className={cn('p-6 rounded bg-[#2a2f32]', borderVariants({ variant: 'divider' }), 'border')}>
-                  <p className="text-muted-foreground">System settings coming soon</p>
+                <div className={cn('p-6 rounded bg-[#0f1213]', borderVariants({ variant: 'divider' }), 'border')}>
+                  <label className="text-lg font-bold tracking-wider text-foreground uppercase block mb-4">
+                    Language
+                  </label>
+                  <button className={cn('px-6 py-2 rounded font-bold tracking-wider transition-colors bg-success text-black')}>
+                    English
+                  </button>
+                </div>
+
+                <div className={cn('p-6 rounded bg-[#0f1213]', borderVariants({ variant: 'divider' }), 'border')}>
+                  <label className="text-lg font-bold tracking-wider text-foreground uppercase block mb-4">
+                    Reset Settings
+                  </label>
+                  <button className={cn('px-6 py-2 rounded font-bold tracking-wider transition-colors bg-destructive text-white hover:bg-[#ef4444]')}>
+                    Reset to Defaults
+                  </button>
                 </div>
               </div>
             )}
