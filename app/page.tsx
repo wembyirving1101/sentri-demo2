@@ -465,14 +465,12 @@ export default function Home() {
   return (
     <div 
       className="w-[1920px] bg-background text-foreground flex flex-col" 
-      style={{ height: '1408px' }}
+      style={{ height: aspectRatio === '16:9' ? '1080px' : '1200px' }}
     >
       {/* Header - Fixed height */}
       <Header 
         currentTime={displayTime} 
         graduationProgress={gameState.graduationProgress}
-        completedTasks={gameState.todaysTasksCompleted}
-        totalTasks={gameState.tasksGeneratedToday || 4}
         onSettingsClick={() => setShowSettings(true)}
       />
 
